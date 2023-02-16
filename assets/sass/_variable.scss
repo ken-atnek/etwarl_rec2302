@@ -1,0 +1,88 @@
+/*==========================================================
+	ウィンドウ・フォントサイズ設定
+==========================================================*/
+// MAX-WIDTH宣言
+$M-width: 1280;
+$PcMaxWidth: calc($M-width * 1px);
+// フォントサイズ(mx1320)
+$max-font: 16;
+$min-font: 12;
+$sp-width: 375;
+// 可変フォントサイズ計算
+$tilt: calc(($max-font - $min-font) / ($M-width - $sp-width));
+$slice: calc($min-font - ($tilt * $sp-width));
+$base-vw: calc($tilt * 100);
+// 指定フォント関数
+@function FZ($size) {
+    @if $size <=$min-font {
+        @return $min-font * 1px;
+    }
+    @else {
+        @return max(12px, ($size / $max-font) * 1em);
+    }
+}
+/*==========  サイズ設定 END  =============================*/
+// フォント設定
+@mixin SunSerif {
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+@mixin Serif {
+    font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+@mixin M_PLUS_1 {
+    font-family: 'M PLUS 1', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+@mixin Caveat {
+    font-family: 'Caveat', cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+@mixin Futura_PT_Book {
+    font-family: futura-pt, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+@mixin Cormorant {
+    font-family: 'Cormorant', serif;
+    font-weight: 500;
+    font-style: normal;
+}
+// カラー設定
+$BaseWhite: hsla(0, 0%, 95%, 1);
+$BaseBlack: hsla(0, 0%, 7%, 1);
+$BaseRed: hsla(0, 100%, 35%, 1);
+$SatColor:#A4C6D4;
+$SunColor:#D4A4BB;
+
+// 画像比率（ヘブン）
+$Heaven: 39/52;
+/*==========================================================
+	レスポンシブ設定
+==========================================================*/
+$tb: 1024px;
+$sp: 767px;
+// PCサイズのみ
+@mixin pc {
+    @media (min-width:($tb)) {
+        @content;
+    }
+}
+// タブレットサイズ以下
+@mixin tb {
+    @media (max-width:($tb)) and (orientation: portrait) {
+        @content;
+    }
+}
+// スマホサイズ以下
+@mixin sp {
+    @media (max-width:($sp)) and (orientation: portrait) {
+        @content;
+    }
+}
+/*==========  レスポンシブ設定 END  =====================*/
