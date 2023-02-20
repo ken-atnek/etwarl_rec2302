@@ -7,28 +7,14 @@ body {
     font-family: 'futura-pt', 'M PLUS 1', sans-serif;
     font-weight: 400;
     font-style: normal;
-    background-color: $BaseBlack;
-    color: $BaseWhite;
+    background-color: #ffe5dc;
+    color: $BaseBlack;
     display: flex;
     flex-direction: column;
     align-items: center;
     z-index: 1;
     font-size: clamp(1.2rem, calc($base-vw * 1vw) + calc($slice * 1px), 1.6rem);
     user-select: none; //USER選択禁止
-    &::after {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 6.8em;
-        background-color: rgba($BaseBlack, 0.6);
-        z-index: +1;
-        mix-blend-mode: multiply;
-        @include sp {
-            display: none;
-        }
-    }
     @include tb {
         font-size: 1.4vw;
     }
@@ -52,6 +38,222 @@ body {
         }
     }
 }
+//========/HEADER ========
+header {
+    position: relative;
+    width: 100%;
+    background-color: #ffe5dc;
+    max-width: $PcMaxWidth;
+    padding: 1em 4em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1em;
+    @include sp{
+        max-width: unset;
+        padding: 1em 4vw;
+    }
+    .logo-wrap {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1em;
+        span {
+            font-size: FZ(16);
+            color: $BasePink;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+        }
+        @include sp{
+            display: none;
+        }
+    }
+    .title {
+        display: inline-flex;
+        flex-direction: column;
+        color: $BasePink;
+        font-size: FZ(18);
+        font-weight: 700;
+        flex-grow: 2;
+        margin-left: 3em;
+        @include sp{
+            flex-grow: 1;
+            margin-left: unset;
+        }
+        span {
+            font-size: 0.8em;
+            color: $BaseBlack;
+        }
+    }
+    .shop-info-box {
+        position: relative;
+        font-size: 1em;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .time {
+            font-size: FZ(16);
+            display: flex;
+            align-items: center;
+            &::before {
+                content: "受付時間";
+                font-size: 0.8em;
+                border: 1px solid $BaseBlack;
+                opacity: 0.9;
+                padding: 0 0.5em;
+                margin-right: 0.5em;
+            }
+        }
+        .tel {
+            position: relative;
+            color: $BasePink;
+            font-size: FZ(28);
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            @include sp{
+                font-size:FZ(21);
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                right: calc(100% + 0.2em);
+                top: 50%;
+                transform: translateY(-50%);
+                width: 1em;
+                aspect-ratio: 1;
+                background: url(../img/phone.svg) no-repeat center center /contain;
+            }
+        }
+        .mail {
+            position: absolute;
+            bottom: 0;
+            right: calc(100% + 2.6em);
+            font-size: 1em;
+            width: 2em;
+            aspect-ratio: 1;
+            background-color: $BasePink;
+            border-radius: 0.5em;
+            @include sp{
+                right: calc(100% + 0.6em);
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 70%;
+                aspect-ratio: 1;
+                background: url(../img/mail.svg) no-repeat center center /contain;
+            }
+        }
+    }
+}
+//========/FOOTER ========
+footer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1em;
+    background-color: #303030;
+    article {
+        position: relative;
+        width: 100%;
+        max-width: $PcMaxWidth;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em 2vw;
+        font-size: 1em;
+        @include sp{
+            flex-direction: column;
+        }
+        .logo-wrap {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1em;
+            span {
+                font-size: FZ(16);
+                color: $BasePink;
+                font-weight: 500;
+                letter-spacing: 0.08em;
+            }
+            
+        }
+        .title {
+            display: inline-flex;
+            flex-direction: column;
+            color: $BasePink;
+            font-size: FZ(18);
+            font-weight: 700;
+            flex-grow: 2;
+            margin-left: 3em;
+            @include sp{
+                margin-left:unset;
+                align-items: center;
+                margin-top: 2em;
+            }
+            
+            span {
+                font-size: 0.8em;
+                color: $BaseBlack;
+            }
+        }
+        nav {
+            position: relative;
+            font-size: 1em;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            color: $BaseWhite;
+            gap: 0.5em 3em;
+            @include sp{
+                display: none;
+            }
+            a {
+                position: relative;
+                font-size: FZ(14);
+                letter-spacing: 0.04em;
+                transition: 0.5s ease-out;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%) rotate(45deg);
+                    width: 0.6em;
+                    left: -1.3em;
+                    aspect-ratio: 1;
+                    border-top: 1px solid $BaseWhite;
+                    border-right: 1px solid $BaseWhite;
+                    transition: 0.5s ease-out;
+                }
+                @include pc {
+                    &:hover {
+                        color: $BasePink;
+                        transition: 0.3s ease-out;
+                        transform: translateX(-0.5em);
+                        &::before {
+                            transform: translateY(-50%) rotate(-135deg);
+                            transition: 0.3s ease-out;
+                            opacity: 0.4;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .copyright {
+        background-color: #000;
+        width: 100%;
+        color: $BaseWhite;
+        text-align: center;
+        font-size: FZ(14);
+        padding: 0.3em 0;
+    }
+}
 #afSite-page {
     width: 100%;
     position: relative;
@@ -60,7 +262,12 @@ body {
     align-items: center;
     font-size: 1em;
     z-index: 1;
-
+    background-color: #ffe5dc;
+    max-width: $PcMaxWidth;
+    padding: 1em 2em 0;
+    @include sp{
+        padding: 2vw 2vw 0;
+    }
     section {
         position: relative;
         font-size: 1em;
@@ -68,10 +275,11 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
+        background-color: $BaseWhite;
         z-index: 1;
-        padding: 0 2vw;
+        padding: 2em 2em 0;
         @include sp {
-            padding: 0 6vw;
+            padding: 2vw 2vw 0;
         }
         article {
             position: relative;
@@ -84,4 +292,3 @@ body {
         }
     }
 }
-

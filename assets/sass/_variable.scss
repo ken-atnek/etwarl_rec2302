@@ -2,7 +2,7 @@
 	ウィンドウ・フォントサイズ設定
 ==========================================================*/
 // MAX-WIDTH宣言
-$M-width: 1280;
+$M-width: 1000;
 $PcMaxWidth: calc($M-width * 1px);
 // フォントサイズ(mx1320)
 $max-font: 16;
@@ -55,10 +55,8 @@ $base-vw: calc($tilt * 100);
 }
 // カラー設定
 $BaseWhite: hsla(0, 0%, 95%, 1);
-$BaseBlack: hsla(0, 0%, 7%, 1);
-$BaseRed: hsla(0, 100%, 35%, 1);
-$SatColor:#A4C6D4;
-$SunColor:#D4A4BB;
+$BaseBlack: #4C4C4C;
+$BasePink: #FF6699;
 
 // 画像比率（ヘブン）
 $Heaven: 39/52;
