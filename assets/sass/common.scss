@@ -49,7 +49,7 @@ header {
     justify-content: space-between;
     align-items: center;
     font-size: 1em;
-    @include sp{
+    @include sp {
         max-width: unset;
         padding: 1em 4vw;
     }
@@ -58,13 +58,18 @@ header {
         flex-direction: column;
         align-items: center;
         font-size: 1em;
+        width: 100%;
+        max-width: 30rem;
         span {
             font-size: FZ(16);
             color: $BasePink;
             font-weight: 500;
             letter-spacing: 0.08em;
         }
-        @include sp{
+        h1 {
+            width: 100%;
+        }
+        @include sp {
             display: none;
         }
     }
@@ -76,7 +81,7 @@ header {
         font-weight: 700;
         flex-grow: 2;
         margin-left: 3em;
-        @include sp{
+        @include sp {
             flex-grow: 1;
             margin-left: unset;
         }
@@ -91,7 +96,6 @@ header {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-
         .time {
             font-size: FZ(16);
             display: flex;
@@ -111,8 +115,8 @@ header {
             font-size: FZ(28);
             font-weight: 500;
             letter-spacing: 0.04em;
-            @include sp{
-                font-size:FZ(21);
+            @include sp {
+                font-size: FZ(21);
             }
             &::before {
                 content: "";
@@ -134,7 +138,7 @@ header {
             aspect-ratio: 1;
             background-color: $BasePink;
             border-radius: 0.5em;
-            @include sp{
+            @include sp {
                 right: calc(100% + 0.6em);
             }
             &::after {
@@ -168,7 +172,7 @@ footer {
         align-items: center;
         padding: 1em 2vw;
         font-size: 1em;
-        @include sp{
+        @include sp {
             flex-direction: column;
         }
         .logo-wrap {
@@ -176,13 +180,17 @@ footer {
             flex-direction: column;
             align-items: center;
             font-size: 1em;
+            width: 100%;
+            max-width: 30rem;
             span {
                 font-size: FZ(16);
                 color: $BasePink;
                 font-weight: 500;
                 letter-spacing: 0.08em;
             }
-            
+            h1 {
+                width: 100%;
+            }
         }
         .title {
             display: inline-flex;
@@ -192,12 +200,11 @@ footer {
             font-weight: 700;
             flex-grow: 2;
             margin-left: 3em;
-            @include sp{
-                margin-left:unset;
+            @include sp {
+                margin-left: unset;
                 align-items: center;
                 margin-top: 2em;
             }
-            
             span {
                 font-size: 0.8em;
                 color: $BaseBlack;
@@ -210,7 +217,7 @@ footer {
             grid-template-columns: repeat(2, 1fr);
             color: $BaseWhite;
             gap: 0.5em 3em;
-            @include sp{
+            @include sp {
                 display: none;
             }
             a {
@@ -265,7 +272,7 @@ footer {
     background-color: #ffe5dc;
     max-width: $PcMaxWidth;
     padding: 1em 2em 0;
-    @include sp{
+    @include sp {
         padding: 2vw 2vw 0;
     }
     section {
