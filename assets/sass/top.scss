@@ -179,9 +179,9 @@ section {
         width: 100%;
         margin-top: 0.8em;
         font-size: 1em;
-        @include sp{
+        @include sp {
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(4, 1fr);
             background-color: transparent;
             gap: 2px;
         }
@@ -192,14 +192,14 @@ section {
             display: flex;
             justify-content: center;
             font-size: 1em;
-            @include sp{
+            @include sp {
                 background-color: #333333;
                 flex-grow: unset;
             }
-            &.home {    
+            &.home {
                 width: 2em;
                 position: relative;
-                @include sp{
+                @include sp {
                     width: 100%;
                 }
                 &::after {
@@ -211,7 +211,7 @@ section {
                     width: 45%;
                     aspect-ratio: 1;
                     background: url(../img/home.svg) no-repeat center center /contain;
-                    @include sp{
+                    @include sp {
                         width: 8vw;
                     }
                 }
@@ -223,7 +223,7 @@ section {
                     right: 0;
                     top: 0;
                     background-color: $BaseWhite;
-                    @include sp{
+                    @include sp {
                         display: none;
                     }
                 }
@@ -257,7 +257,7 @@ section {
                         top: 50%;
                         transform: translateY(-50%);
                         background-color: $BaseWhite;
-                        @include sp{
+                        @include sp {
                             display: none;
                         }
                     }
@@ -292,7 +292,7 @@ section {
     .image-wrap {
         width: 25%;
         aspect-ratio: 1;
-        @include sp{
+        @include sp {
             aspect-ratio: unset;
             width: 15vw;
         }
@@ -354,8 +354,8 @@ h2 {
         gap: 0 1em;
         font-size: 1em;
         margin-top: 1em;
-        @include sp{
-            grid-template-columns: repeat(2,1fr);
+        @include sp {
+            grid-template-columns: repeat(2, 1fr);
             gap: 2vw;
         }
         li {
@@ -392,12 +392,12 @@ h2 {
         font-weight: 700;
         margin: 1em 0 0.6em;
         letter-spacing: 0.04em;
-        @include sp{
+        @include sp {
             text-align: center;
         }
-        br{
+        br {
             display: none;
-            @include sp{
+            @include sp {
                 display: inline;
             }
         }
@@ -407,7 +407,7 @@ h2 {
         text-align: center;
         letter-spacing: 0.04em;
         line-height: 1.6em;
-        @include sp{
+        @include sp {
             text-align: left;
         }
     }
@@ -419,8 +419,8 @@ h2 {
                 font-size: FZ(36);
                 font-weight: 500;
                 color: rgba(128, 128, 128, 1);
-                @include sp{
-                    font-size:FZ(21);
+                @include sp {
+                    font-size: FZ(21);
                 }
                 em {
                     font-size: 2.4em;
@@ -467,7 +467,7 @@ h2 {
             font-size: 1em;
             display: flex;
             width: 100%;
-            @include sp{
+            @include sp {
                 flex-direction: column;
                 font-size: 1.1em;
             }
@@ -481,7 +481,7 @@ h2 {
                 background-color: #dddddd;
                 display: flex;
                 align-items: center;
-                @include sp{
+                @include sp {
                     width: 100%;
                 }
             }
@@ -518,7 +518,7 @@ h2 {
         border: 1rem solid #eeeeee;
         box-shadow: 0 0 1em rgba(#000, 0.3);
         margin-bottom: 2em;
-        @include sp{
+        @include sp {
             padding: 4vw;
             margin-top: 8vw;
         }
@@ -526,6 +526,68 @@ h2 {
             color: $BaseWhite;
             font-size: FZ(24);
             font-weight: 500;
+        }
+        .line-box {
+            position: relative;
+            font-size: 1em;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 20% 1fr;
+            background-color: #06c755;
+            padding: 2em;
+            border-radius: 1em;
+            color: $BaseWhite;
+            gap: 1em;
+            @include sp {
+                display: flex;
+                flex-direction: column;
+                padding: 4vw;
+                gap: 2vw;
+            }
+            .qr-wrap {
+                position: relative;
+                grid-row: span 2;
+                @include sp {
+                    display: none;
+                }
+            }
+            h4 {
+                font-size: FZ(31);
+                font-weight: 700;
+                @include sp {
+                    font-size: FZ(18);
+                }
+                i {
+                    font-size: FZ(36);
+                    font-weight: 500;
+                    @include sp {
+                        font-size: FZ(24);
+                    }
+                }
+            }
+            .contents {
+                position: relative;
+                font-size: 1em;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5em 0;
+                span {
+                    font-size: FZ(24);
+                    @include sp {
+                        background-color: rgb(28, 28, 28);
+                        padding: 0.5em;
+                        color: $BaseWhite;
+                    }
+                    a {
+                        font-size: 1em;
+                        margin-left: 0.5em;
+                    }
+                }
+                p {
+                    font-size: FZ(16);
+                    color: #333333;
+                }
+            }
         }
         button {
             position: relative;
@@ -535,7 +597,7 @@ h2 {
             width: 100%;
             font-size: 1em;
             gap: 0 1em;
-            @include sp{
+            @include sp {
                 display: flex;
                 flex-direction: column;
                 gap: 4vw 0;
